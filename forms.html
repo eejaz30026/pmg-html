@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Project</title>
+
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Font Awesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Add your custom CSS styles here -->
+    <style>
+        .custom-file-upload {
+            display: inline-block;
+            cursor: pointer;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Hide the real input file element */
+        #real-file-upload {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Logo (left side) -->
+            <a class="navbar-brand" href="#"><img src="https://nadec.com/wp-content/uploads//2021/05/nadec-logo.svg"
+                    alt="Logo" width="50"></a>
+
+            <!-- Menu Links (center) -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Dropdown with Profile Picture (right side) -->
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgYcn5CK4ijatk15jH7b0Isu7eprNNDmXkgrN3am8f6w&s"
+                            alt="Profile Picture" width="30" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row center-card">
+            <div class="col-md-6">
+                <h5 class="card-title">Forms fields</h5>
+                <form>
+                    <!-- Text Input -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+
+                    <!-- Radio Buttons -->
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                    </div>
+
+                    <!-- Checkboxes -->
+                    <div class="mb-3">
+                        <label>Interests</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="interest1" value="interest1">
+                            <label class="form-check-label" for="interest1">Interest 1</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="interest2" value="interest2">
+                            <label class="form-check-label" for="interest2">Interest 2</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="interest3" value="interest3">
+                            <label class="form-check-label" for="interest3">Interest 3</label>
+                        </div>
+                    </div>
+
+                    <!-- Select Dropdown -->
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <select class="form-select" id="country">
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                        </select>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="mb-3">
+                        <label for="comments" class="form-label">Comments</label>
+                        <textarea class="form-control" id="comments" rows="4"
+                            placeholder="Enter your comments"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <!-- Custom Styled File Upload Container -->
+                        <label for="real-file-upload" class="custom-file-upload">
+                            <i class="fas fa-cloud-upload-alt"></i> Upload File
+                        </label>
+                        <input type="file" id="real-file-upload" onchange="displayFileName()">
+
+                        <!-- Display the selected file name -->
+                        <div id="file-name"></div>
+                    </div>
+
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function displayFileName() {
+            const fileInput = document.getElementById('real-file-upload');
+            const fileNameContainer = document.getElementById('file-name');
+            const fileName = fileInput.value.split(/(\\|\/)/g).pop(); // Extract the file name from the file path
+            fileNameContainer.textContent = 'Selected File: ' + fileName;
+        }
+    </script>
+
+    <!-- Bootstrap JS and Popper.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
